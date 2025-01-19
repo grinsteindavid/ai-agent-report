@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+
+cd ./dist
+
+  zip -r lambda.zip . -i ./*.js
+  mv ./lambda.zip ../
+
+cd ../

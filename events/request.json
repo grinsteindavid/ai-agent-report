@@ -1,0 +1,13 @@
+{
+  "version": "0",
+  "id": "c7c5f8e1-5d7b-4f8b-9f8b-1c2e3f4e5d6f",
+  "detail-type": "Scheduled Event",
+  "source": "aws.events",
+  "account": "123456789012",
+  "time": "2021-04-26T20:07:37Z",
+  "region": "us-east-1",
+  "resources": [
+    "arn:aws:events:us-east-1:123456789012:rule/MyScheduledRule"
+  ],
+  "detail": {}
+}

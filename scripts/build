@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+require('dotenv').config({ path: '../../.env' });
+const { buildSync } = require('esbuild');
+
+const define = {};
+
+const envVarWhitelist = [
+  'MONGO_URL',
+];
+
+for (const k of envVarWhitelist) {
+  define[`process.env.${k}`] = JSON.stringify(process.env[k]);
+}
+
+const options = {
+  entryPoints: ['./src/index.ts'],
+  outfile: './dist/index.js',
+  bundle: true,
+  external: [
+    'aws-lambda',
+  ],
+  platform: 'node',
+  sourcemap: true,
+  define,
+};
+
+const result = buildSync(options);
+
+console.log(result);
